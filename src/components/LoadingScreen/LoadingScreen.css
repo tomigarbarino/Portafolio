@@ -1,0 +1,40 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    z-index: 9999;
+  }
+  
+  .loading-text {
+    animation: blink 1s linear infinite;
+    text-align: center;
+  }
+  
+  .login-prompt {
+    animation: blink 1s linear infinite;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

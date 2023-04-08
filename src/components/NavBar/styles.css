@@ -1,0 +1,136 @@
+/* Estilo general */
+
+/* Estilo de la barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(/src/assets/img-noise-361x370.png);
+    background-color: lightgrey;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: 13px;
+    height: 22px;
+    border-bottom: 1px solid #262626;
+    box-shadow: inset 0 1px 0 0 #eee, inset 0 -1px 0 0 #bbb, 0 10px 20px 0 rgba(0, 0, 0, .06);
+  }
+  
+  .nav-item {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    padding-right: 2px;
+    height: 22px;
+  }
+  
+  .nav-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    transition: color 0.1s;
+  }
+  
+  .icon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+  
+  .text {
+    /* Estilos del texto "Tomas Garbarino" */
+  }
+  
+  .nav-item:hover {
+    background-color: #191986;
+    padding-right: 2px;
+  }
+  
+  .nav-item:hover a {
+    color: azure;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+  }
+  
+  .contact-text {
+    display: inline-block;
+    align-self: center;
+    margin-top: 4px;
+    padding: 0px 3px 0px 3px;
+    transition: color 0.1s, background-color 0.1s; /* Agrega transición para el color y fondo */
+  }
+  
+  .contact-text:hover {
+    background-color: #191986;
+    color: azure; /* Agrega cambio de color al hacer hover */
+  }
+  
+  /* clock */
+  
+  .clock-style {
+    list-style: none;
+    font-family: 'Charcoal', sans-serif;
+  }
+  
+  .contact-style:hover {
+    background-color: #191986;
+    color: azure;
+    cursor: pointer;
+  }
+  
+  .navbar-clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 4px 0px 0px;
+    margin-left: auto; /* Empuja los elementos hacia la derecha */
+}
+
+  
+  .image-mundo {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px; /* Agrega margen a la derecha de la imagen */
+  }
+  
+  .fullscreen {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .fullscreen-container {
+    display: flex;
+    align-items: center;
+    margin-left: 17px;
+  }
+  
+  /* Agrega esta regla para asegurar que los márgenes entre la imagen y el botón sean consistentes */
+  .fullscreen-container > * {
+    margin-right: 6px;
+  }
+  
+  .image-screen {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  
+  
