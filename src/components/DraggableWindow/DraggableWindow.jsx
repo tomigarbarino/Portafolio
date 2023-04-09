@@ -1,92 +1,53 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './DraggableWindow.css';
 
-function FloatingWindow(props) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [topPosition, setTopPosition] = useState(50);
-  const [leftPosition, setLeftPosition] = useState(50);
-  const [windowWidth, setWindowWidth] = useState(400);
-  const [windowHeight, setWindowHeight] = useState(300);
-  const [isResizing, setIsResizing] = useState(false);
-  const [resizeStartX, setResizeStartX] = useState(0);
-  const [resizeStartY, setResizeStartY] = useState(0);
-  const [isClosing, setIsClosing] = useState(false);
+function DraggableWindow(props) {
+  const { onClose } = props;
+  const [isDragging, setIsDragging] = useState(false); // estado para guardar si se está arrastrando la ventana
+  const [posX, setPosX] = useState(0); // posición horizontal inicial de la ventana
+  const [posY, setPosY] = useState(0); // posición vertical inicial de la ventana
 
-  const windowRef = useRef(null);
-
-  useEffect(() => {
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
-  });
-
-  function handleMouseDown(event) {
-    setIsDragging(true);
-
-    const windowElement = windowRef.current;
-    const boundingRect = windowElement.getBoundingClientRect();
-
-    setTopPosition(event.clientY - boundingRect.top);
-    setLeftPosition(event.clientX - boundingRect.left);
+  function handleMouseDown(e) {
+    setIsDragging(true); // se empieza a arrastrar la ventana
+    setPosX(e.clientX); // se guarda la posición horizontal actual del mouse
+    setPosY(e.clientY); // se guarda la posición vertical actual del mouse
   }
 
-  function handleMouseMove(event) {
+  function handleMouseMove(e) {
     if (isDragging) {
-      setTopPosition(event.clientY - windowRef.current.offsetHeight / 2);
-      setLeftPosition(event.clientX - windowRef.current.offsetWidth / 2);
-    } else if (isResizing) {
-      const newWidth = Math.max(200, windowWidth + event.clientX - resizeStartX);
-      const newHeight = Math.max(100, windowHeight + event.clientY - resizeStartY);
-
-      setWindowWidth(newWidth);
-      setWindowHeight(newHeight);
-
-      setResizeStartX(event.clientX);
-      setResizeStartY(event.clientY);
+      const dx = e.clientX - posX; // diferencia de posición horizontal entre la posición actual y la posición inicial
+      const dy = e.clientY - posY; // diferencia de posición vertical entre la posición actual y la posición inicial
+      const windowElement = document.getElementById('draggable-window'); // se obtiene el elemento de la ventana
+      windowElement.style.left = `${windowElement.offsetLeft + dx}px`; // se actualiza la posición horizontal de la ventana
+      windowElement.style.top = `${windowElement.offsetTop + dy}px`; // se actualiza la posición vertical de la ventana
+      setPosX(e.clientX); // se actualiza la posición horizontal anterior del mouse
+      setPosY(e.clientY); // se actualiza la posición vertical anterior del mouse
     }
   }
 
   function handleMouseUp() {
-    setIsDragging(false);
-    setIsResizing(false);
-  }
-
-  function handleResizeMouseDown(event) {
-    setIsResizing(true);
-
-    setResizeStartX(event.clientX);
-    setResizeStartY(event.clientY);
-  }
-
-  function handleCloseClick() {
-    setIsClosing(true);
+    setIsDragging(false); // se deja de arrastrar la ventana
   }
 
   return (
     <div
-      ref={windowRef}
-      className={`floating-window ${isClosing ? 'closing' : ''}`}
-      style={{
-        top: `${topPosition}px`,
-        left: `${leftPosition}px`,
-        width: `${windowWidth}px`,
-        height: `${windowHeight}px`,
-      }}
+      id="draggable-window"
+      className="draggable-window"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
     >
-      <div className="window-title-bar" onMouseDown={handleMouseDown}>
-        <div className="window-title">{props.title}</div>
-        <div className="window-controls">
-          <div className="window-control" onMouseDown={handleResizeMouseDown}></div>
-          <div className="window-control" onClick={handleCloseClick}></div>
+      <div className="window-header">
+        <div className="window-title">Ventana Draggable</div>
+        <div className="window-close" onClick={onClose}>
+          X
         </div>
       </div>
-      <div className="window-content">{props.children}</div>
+      <div className="window-body">
+        Contenido de la ventana draggable
+      </div>
     </div>
   );
 }
 
-export default FloatingWindow;
+export default DraggableWindow;
