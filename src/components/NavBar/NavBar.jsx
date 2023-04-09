@@ -29,13 +29,13 @@ function NavBar() {
             <Clock></Clock>
           </li>
         </ul>
-        <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d93246375475_Menu%20bar%20resizer.svg" loading="lazy" alt="Resizer"  className='icon-resizer'></img>
+        <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d93246375475_Menu%20bar%20resizer.svg" alt="Resizer"  className='icon-resizer'></img>
         <div className="fullscreen-container">
-        <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d93246375475_Menu%20bar%20resizer.svg" loading="lazy" alt="Resizer"  className='icon-resizer'></img>
-          <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d9a2f9375470_Monitor%20resolution.svg" loading="lazy" alt="" className="image-screen"></img>
+        <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d93246375475_Menu%20bar%20resizer.svg" alt="Resizer"  className='icon-resizer'></img>
+          <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d9a2f9375470_Monitor%20resolution.svg" alt="" className="image-screen"></img>
           <FullScreen></FullScreen>
         </div>
-        <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d93246375475_Menu%20bar%20resizer.svg" loading="lazy" alt="Resizer"  className='icon-resizer'></img>
+        <img src="https://assets.website-files.com/637fe1f84b89d92db337544d/637fe1f84b89d93246375475_Menu%20bar%20resizer.svg" alt="Resizer"  className='icon-resizer'></img>
       </nav>
     </div>
   );

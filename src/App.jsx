@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './components/NavBar/NavBar'
-import LoadingScreen from './components/LoadingScreen/LoadingScreen'
-import Shortcut from './components/ShortCut/ShortCut.jsx'
+import Navbar from './components/NavBar/NavBar.jsx'
+import LoadingScreen from './components/LoadingScreen/LoadingScreen.jsx'
+import ClickableComponent from './components/DraggableModal/ClickableComponent.jsx';
 
 
 
@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <LoadingScreen onEnd={handleLoadingScreenEnd} showLoadingScreen={showLoadingScreen} />
       <Navbar />
-      <Shortcut/>
+      <ClickableComponent />
     </div>
   );
 }
