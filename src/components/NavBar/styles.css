@@ -89,7 +89,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2px 4px 0px 0px;
+    padding: 2px 6px 0px 0px;
     margin-left: auto; /* Empuja los elementos hacia la derecha */
 }
 
@@ -119,7 +119,7 @@
   .fullscreen-container {
     display: flex;
     align-items: center;
-    margin-left: 17px;
+    margin-left: 4px;
   }
   
   /* Agrega esta regla para asegurar que los márgenes entre la imagen y el botón sean consistentes */
