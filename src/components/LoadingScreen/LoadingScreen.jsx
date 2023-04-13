@@ -38,6 +38,9 @@ function LoadingScreen() {
           </span>
         ))}
       </div>
+      <div className="loading-bar-container">
+        <div className="loading-bar"></div>
+      </div>
     </div>
   );
 }
