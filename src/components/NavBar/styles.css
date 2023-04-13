@@ -59,32 +59,12 @@
     padding: 0px;
   }
   
-  .contact-text {
-    display: inline-block;
-    align-self: center;
-    margin-top: 4px;
-    padding: 0px 3px 0px 3px;
-    transition: color 0.1s, background-color 0.1s; /* Agrega transición para el color y fondo */
-  }
-  
-  .contact-text:hover {
-    background-color: #191986;
-    color: azure; /* Agrega cambio de color al hacer hover */
-  }
-  
   /* clock */
   
   .clock-style {
     list-style: none;
     font-family: 'Charcoal', sans-serif;
   }
-  
-  .contact-style:hover {
-    background-color: #191986;
-    color: azure;
-    cursor: pointer;
-  }
-  
   .navbar-clock {
     display: flex;
     align-items: center;
@@ -97,7 +77,7 @@
   .image-mundo {
     width: 16px;
     height: 16px;
-    margin-right: 8px; /* Agrega margen a la derecha de la imagen */
+    margin-right: 6px; /* Agrega margen a la derecha de la imagen */
   }
   
   .fullscreen {

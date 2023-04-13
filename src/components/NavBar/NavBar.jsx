@@ -9,13 +9,10 @@ function NavBar() {
       <nav className="navbar">
         <ul className="navbar-menu">
           <li className="nav-item">
-            <a href="#">
+            <a href='https://www.linkedin.com/in/tomas-garbarino/' target="_blank">
               <span className="material-symbols-outlined icon">emoji_people</span>
-              <span className="text">Tomas Garbarino</span>
+              <span className="text" >Tomas Garbarino</span>
             </a>
-          </li>
-          <li className="nav-item contact-style">
-            <span className="contact-text">Contact</span>
           </li>
         </ul>
         <ul className="navbar-clock">
